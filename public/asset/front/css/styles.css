@@ -1,0 +1,147 @@
+.error {
+  color: red;
+}
+body {
+  font-family: 'Poppins';
+}
+.pricing_left {
+  font-family: 'Poppins';
+  color: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+}
+.pricing_left h2 {
+  font-size: 25px;
+  font-weight: 800;
+}
+.pricing_left p {
+  font-family: inherit;
+  color: inherit;
+  font-size: 16px;
+}
+.pricing_left div {
+  font-family: inherit;
+  color: inherit;
+}
+.pricing_left a {
+  font-weight: 800;
+  font-size: 18px;
+  border-radius: 7px;
+}
+.need_shipping {
+  font-family: 'Poppins';
+  padding: 20px 0px 80px 0px;
+}
+.need_shipping h1 {
+  color: #393939;
+  font-family: inherit;
+  font-size: 45px;
+  font-weight: 700;
+  text-shadow: 0px 1px, 1px 0px, 1px 1px;
+}
+.need_shipping h3 {
+  color: #3a3a3a;
+}
+.need_shipping form {
+  margin-top: 45px;
+}
+.need_shipping form button {
+  background: black;
+  color: white;
+  font-weight: 600;
+}
+.why_with_puryau {
+  font-family: 'Poppins';
+  padding: 5px 100px 30px 100px;
+  margin-bottom: 0px;
+}
+.why_with_puryau h1 {
+  color: black;
+  font-size: 45px;
+  font-weight: 700;
+  text-shadow: 0px 1px, 1px 0px, 1px 1px;
+}
+.why_with_puryau h3 {
+  color: black;
+  font-size: 30px;
+  font-weight: 700;
+}
+.why_with_puryau p {
+  font-family: inherit;
+  color: inherit;
+  font-size: 18px;
+  margin-top: 20px;
+}
+.why_with_puryau a {
+  background: transparent;
+  color: black;
+  border-radius: 0px;
+  border: 2px solid black;
+  font-family: 'Poppins';
+  font-weight: 700;
+}
+.why_with_puryau .btn-action:first-of-type {
+  margin-right: 3rem;
+}
+footer {
+  margin-top: 0px;
+}
+
+@media screen and (max-width: 768px) {
+  .pricing_left {
+    margin-top: 16px;
+    height: auto;
+    width: calc(100% - 3rem);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .pricing_left a {
+    font-size: 1.3rem;
+  }
+
+  .pricing_left h2 {
+    font-size: 1.8rem;
+  }
+
+  .pricing_left p {
+    font-size: 1.4rem;
+  }
+  .need_shipping h1 {
+    font-size: 3.5rem;
+    margin-top: 0rem;
+    padding: 0 1.2rem;
+  }
+  .need_shipping h3 {
+    padding: 0 1.2rem;
+  }
+  .quote-form {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .quote-form .form-control {
+    width: 98%;
+    margin-bottom: 0.8rem;
+  }
+
+  .why_with_puryau {
+    padding: 10px 40px 30px 40px;
+  }
+
+  .why_with_puryau p {
+    font-size: 1.7rem;
+  }
+  .why_with_puryau .btn-action:first-of-type {
+    margin-right: 1.5rem;
+  }
+  .footer_menu ul {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .need_shipping {
+    padding: 20px 0px;
+  }
+  .need_shipping form button {
+    margin-top: 1.5rem;
+  }
+}

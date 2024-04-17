@@ -1,0 +1,89 @@
+<?php
+
+namespace App\Http;
+
+use Illuminate\Foundation\Http\Kernel as HttpKernel;
+
+class Kernel extends HttpKernel
+{
+    /**
+     * The application's global HTTP middleware stack.
+     *
+     * These middleware are run during every request to your application.
+     * 
+     * @var array
+     */
+    protected $middleware = [
+        \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
+    ];
+
+    /**
+     * The application's route middleware groups.
+     *
+     * @var array
+     */
+    protected $middlewareGroups = [
+        'web' => [
+            \App\Http\Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+            \Illuminate\Session\Middleware\StartSession::class,
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \App\Http\Middleware\VerifyCsrfToken::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\CheckLanguage::class,
+            \App\Http\Middleware\Localization::class, // Our localization middleware
+        ],
+        'api' => [
+            'throttle:1000,60',
+            'bindings',
+        ],
+    ];
+
+    /**
+     * The application's route middleware.
+     *
+     * These middleware may be assigned to groups or used individually.
+     *
+     * @var array
+     */
+    protected $routeMiddleware = [
+		'accesspage' => \App\Http\Middleware\CheckAccessPage::class,
+        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'account' => \App\Http\Middleware\RedirectIfNotAccount::class,
+        'account.guest' => \App\Http\Middleware\RedirectIfAccount::class,
+        'fulfillment' => \App\Http\Middleware\RedirectIfNotFulfillment::class,
+        'fulfillment.guest' => \App\Http\Middleware\RedirectIfFulfillment::class,
+        'fleet' => \App\Http\Middleware\RedirectIfNotFleet::class,
+        'fleet.guest' => \App\Http\Middleware\RedirectIfFleet::class,
+        'dispatcher' => \App\Http\Middleware\RedirectIfNotDispatcher::class,
+        'dispatcher.guest' => \App\Http\Middleware\RedirectIfDispatcher::class,
+        'provider' => \App\Http\Middleware\RedirectIfNotProvider::class,
+        'crm' => \App\Http\Middleware\RedirectIfNotCrm::class,
+        'crm.guest' => \App\Http\Middleware\RedirectIfCrm::class,
+        'cms' => \App\Http\Middleware\RedirectIfNotCms::class,
+        'cms.guest' => \App\Http\Middleware\RedirectIfCms::class,
+        'provider.guest' => \App\Http\Middleware\RedirectIfProvider::class,
+        'provider.api' => \App\Http\Middleware\ProviderApiMiddleware::class,
+        'dispatcher.api' => \App\Http\Middleware\DispatcherApiMiddleware::class,
+        'admin' => \App\Http\Middleware\RedirectIfNotAdmin::class,
+        'admin.guest' => \App\Http\Middleware\RedirectIfAdmin::class,
+        'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
+        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'can' => \Illuminate\Auth\Middleware\Authorize::class,
+        'support' => \App\Http\Middleware\RedirectIfNotSupport::class,
+        'support.guest' => \App\Http\Middleware\RedirectIfSupport::class,
+        'return' => \App\Http\Middleware\RedirectIfNotReturn::class,
+        'return.guest' => \App\Http\Middleware\RedirectIfReturn::class,
+        'sortcenter' => \App\Http\Middleware\RedirectIfNotSortcenter::class,
+        'sortcenter.guest' => \App\Http\Middleware\RedirectIfSortcenter::class,
+        'pickup' => \App\Http\Middleware\RedirectIfNotPickup::class,
+        'pickup.guest' => \App\Http\Middleware\RedirectIfPickup::class,
+        'bm' => \App\Http\Middleware\RedirectIfNotBm::class,
+        'bm.guest' => \App\Http\Middleware\RedirectIfBm::class,
+        'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'jwt.auth' => 'Tymon\JWTAuth\Middleware\GetUserFromToken',
+        'jwt.refresh' => 'Tymon\JWTAuth\Middleware\RefreshToken',
+		
+    ];
+}

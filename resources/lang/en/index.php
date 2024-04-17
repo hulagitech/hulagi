@@ -1,0 +1,55 @@
+<?php
+
+return array (
+  'welcome' => 'The Easiest, Fastest and Most Reliable',
+  'index_title' => 'The easiest, fastest and most reliable',
+  'index_header_p' => 'Delivery Service for you and your loved one',
+  'reasons' => 
+  array (
+    'reasons_header_1' => 'Looking for Delivery?',
+    'reasons_header_2' => 'Flexible Fare',
+    'reasons_header_3' => 'Become a Rider',
+    'reasons_header_p1' => 'Book and Deliver one click, Download Hulagi App and Book Now.',
+    'reasons_header_p2' => 'Enter your pickup location and destination and see the Fare.',
+    'reasons_header_p3' => 'Do you want earn more money, Hulagi is the best Platform.',
+    'reasons_header_btn1' => 'How it works',
+    'reasons_header_btn2' => 'Calculate Fee',
+    'reasons_header_btn3' => 'Subscribe',
+  ),
+  'our_drivers' => 
+  array (
+    'our_drivers_h2' => 'Book a Deliver, whenever and wherever you want.',
+    'our_drivers_p' => '<p>Hulagi Rider are Expert and they will drop you at your destination safely!</p><p>Hulagi Delivery are are best in the city and perfect at anywhere and any time or whenever you want to travel.</p>',
+  ),
+  'title' => 'Hulagi',
+  'book_now' => 'BOOK NOW',
+  'calculate_fare' => 'CALCULATE FARE',
+  'signup_now' => 'SIGNUP NOW',
+  'read_stories' => 'READ STORIES',
+  'get_there' => 'Get there',
+  'your_day_belongs_to_you' => 'Your day belongs to you',
+  'book_online' => 'Book Online',
+  'with_fare_estimation' => 'Get Instant Delivery.',
+  'enter_pickup_location' => 'Enter Pickup Location',
+  'enter_destination' => 'Enter Delivery Location',
+  'parameter' => 
+  array (
+    'title1' => 'Ride with Hulagi',
+    'description1' => 'One tap and a car comes directly to you. Hop in—your rider knows exactly where to go. And when you get there, just step out. Payment is completely seamless.',
+    'title2' => 'Calulate Fare, Before Booking',
+    'description2' => 'Daily commute. Errand across town. Early morning flight. Late night drinks. Wherever you’re headed, count on Instacab for a ride—no reservations required.',
+    'title3' => 'Earn More Lives Better',
+    'description3' => 'Economy cars at everyday prices are always available. For special occasions, no occasion at all, or when you just a need a bit more room, call a black car or SUV.',
+    'title4' => 'Drive when you want',
+    'small' => 'Make what you need',
+    'description4' => 'Driving with Instacab is flexible and rewarding, helping riders meet their career and financial goals.',
+    'title5' => 'Unlocking More Cities',
+    'title6' => 'Now Hulagi is in Kathmandu, Banepa, Dhulikhel and Panauti',
+    'description5' => 'and launching soon in other parts of the Nepal.',
+  ),
+  'search_your_city' => 'search your city..',
+  'is_in_nepal' => 'is in Kathmandu, Banepa, Dhulikhel & Panauti',
+  'now' => 'Now',
+  'pricing' => 'Pricing',
+  'get_fare' => 'Get a fare estimate',
+);

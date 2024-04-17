@@ -1,0 +1,37 @@
+[31-Jul-2020 08:49:09 UTC] PHP Warning:  require_once(/home/joljjywabr80/public_html/mycourier/app/razorpay/libs/Requests-1.7.0/library/Requests.php): failed to open stream: No such file or directory in /home/isabi/public_html/config/Razorpay.php on line 7
+[31-Jul-2020 08:49:09 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/joljjywabr80/public_html/mycourier/app/razorpay/libs/Requests-1.7.0/library/Requests.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/isabi/public_html/config/Razorpay.php on line 7
+[31-Jul-2020 08:52:57 UTC] PHP Fatal error:  Uncaught Symfony\Component\Debug\Exception\FatalThrowableError: Class 'PDO' not found in /home/isabi/public_html/config/database.php:16
+Stack trace:
+#0 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(60): require()
+#1 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(38): Illuminate\Foundation\Bootstrap\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\Foundation\Application), Object(Illuminate\Config\Repository))
+#2 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(203): Illuminate\Foundation\Bootstrap\LoadConfiguration->bootstrap(Object(Illuminate\Foundation\Application))
+#3 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(254): Illuminate\Foundation\Application->bootstrapWith(Array)
+#4 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\Foundatio in /home/isabi/public_html/config/database.php on line 16
+[31-Jul-2020 08:53:01 UTC] PHP Fatal error:  Uncaught Symfony\Component\Debug\Exception\FatalThrowableError: Class 'PDO' not found in /home/isabi/public_html/config/database.php:16
+Stack trace:
+#0 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(60): require()
+#1 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(38): Illuminate\Foundation\Bootstrap\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\Foundation\Application), Object(Illuminate\Config\Repository))
+#2 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(203): Illuminate\Foundation\Bootstrap\LoadConfiguration->bootstrap(Object(Illuminate\Foundation\Application))
+#3 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(254): Illuminate\Foundation\Application->bootstrapWith(Array)
+#4 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\Foundatio in /home/isabi/public_html/config/database.php on line 16
+[31-Jul-2020 08:53:05 UTC] PHP Fatal error:  Uncaught Symfony\Component\Debug\Exception\FatalThrowableError: Class 'PDO' not found in /home/isabi/public_html/config/database.php:16
+Stack trace:
+#0 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(60): require()
+#1 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(38): Illuminate\Foundation\Bootstrap\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\Foundation\Application), Object(Illuminate\Config\Repository))
+#2 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(203): Illuminate\Foundation\Bootstrap\LoadConfiguration->bootstrap(Object(Illuminate\Foundation\Application))
+#3 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(254): Illuminate\Foundation\Application->bootstrapWith(Array)
+#4 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\Foundatio in /home/isabi/public_html/config/database.php on line 16
+[31-Jul-2020 08:53:10 UTC] PHP Fatal error:  Uncaught Symfony\Component\Debug\Exception\FatalThrowableError: Class 'PDO' not found in /home/isabi/public_html/config/database.php:16
+Stack trace:
+#0 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(60): require()
+#1 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(38): Illuminate\Foundation\Bootstrap\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\Foundation\Application), Object(Illuminate\Config\Repository))
+#2 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(203): Illuminate\Foundation\Bootstrap\LoadConfiguration->bootstrap(Object(Illuminate\Foundation\Application))
+#3 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(254): Illuminate\Foundation\Application->bootstrapWith(Array)
+#4 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\Foundatio in /home/isabi/public_html/config/database.php on line 16
+[31-Jul-2020 08:53:14 UTC] PHP Fatal error:  Uncaught Symfony\Component\Debug\Exception\FatalThrowableError: Class 'PDO' not found in /home/isabi/public_html/config/database.php:16
+Stack trace:
+#0 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(60): require()
+#1 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(38): Illuminate\Foundation\Bootstrap\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\Foundation\Application), Object(Illuminate\Config\Repository))
+#2 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(203): Illuminate\Foundation\Bootstrap\LoadConfiguration->bootstrap(Object(Illuminate\Foundation\Application))
+#3 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(254): Illuminate\Foundation\Application->bootstrapWith(Array)
+#4 /home/isabi/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\Foundatio in /home/isabi/public_html/config/database.php on line 16
