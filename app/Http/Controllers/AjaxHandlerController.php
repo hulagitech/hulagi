@@ -21,7 +21,6 @@ use Illuminate\Support\Facades\Log;
 
 class AjaxHandlerController extends Controller
 {
-	
 	protected $UserAPI;
 
     /**
@@ -42,22 +41,19 @@ class AjaxHandlerController extends Controller
      */
 
     public function applyPromoCodeOnEstimatedFare(Request $request) {
-		
+
 		$validator = Validator::make($request->all(), [
              'promo_code' => 'required|exists:promocodes,promo_code',
-           
+
         ]);
-		
+
 		if ($validator->fails()) {
-			
 				return response()->json([
-                        'errors' => $validator->getMessageBag()->toArray(), 
+                        'errors' => $validator->getMessageBag()->toArray(),
                         'code' => 'request_error'
                     ]);
-					
 			}
-		
-		
+
         try{
 
             $find_promo = Promocode::where('promo_code',$request->promo_code)->first();
@@ -67,7 +63,7 @@ class AjaxHandlerController extends Controller
                 if($request->ajax()){
 
                     return response()->json([
-                        'message' => trans('api.promocode_expired'), 
+                        'message' => trans('api.promocode_expired'),
                         'code' => 'promocode_expired'
                     ]);
 
@@ -80,7 +76,7 @@ class AjaxHandlerController extends Controller
                 if($request->ajax()) {
 
                     return response()->json([
-                        'message' => trans('api.promocode_already_in_use'), 
+                        'message' => trans('api.promocode_already_in_use'),
                         'code' => 'promocode_already_in_use'
                         ]);
 
@@ -89,17 +85,17 @@ class AjaxHandlerController extends Controller
                 }
 
             } else {
-				
+
                 // apply promo_code on estimated fare
                 $fare =   $this->getEstimatedFare( $request );
-                
+
                 if($request->ajax()){
 
                     return response()->json([
                             'message' 	=> trans('api.promocode_applied') ,
 							'fare'		=> $fare,
                             'code' 		=> 'promocode_applied'
-                         ]); 
+                         ]);
 
                 }else{
                     return back()->with('flash_success', trans('api.promocode_applied'));
@@ -119,18 +115,18 @@ class AjaxHandlerController extends Controller
 
 
     public function getEstimatedFare(Request $request ) {
-        
-        $fare = $this->UserAPI->estimated_fare($request)->getData();	
+
+        $fare = $this->UserAPI->estimated_fare($request)->getData();
         $fare->estimated_fare = currency( $fare->estimated_fare );
-        
+
         return $fare;
-    
+
     }
 
 
 
     public function estimated_fare(Request $request) {
-        
+
         $this->validate($request,[
             's_latitude' => 'required|numeric',
             's_longitude' => 'required|numeric',
@@ -138,7 +134,7 @@ class AjaxHandlerController extends Controller
             'd_longitude' => 'required|numeric',
             'service_type' => 'required|numeric|exists:service_types,id',
         ]);
-        
+
 
         try{
 
@@ -156,7 +152,7 @@ class AjaxHandlerController extends Controller
             if($request->user_id){
                 $User=User::where('id',$request->user_id)->get()->first();
             }
-            
+
             //check if the given pickup and destination address lies inside some zone
 
             $zones=Zones::where("status","active")->get();
@@ -175,17 +171,20 @@ class AjaxHandlerController extends Controller
 
                 //now compare it with the given inputs
                 $sCheck=\GeometryLibrary\PolyUtil::containsLocation(
-                    ['lat' => $request->s_latitude, 'lng' => $request->s_longitude],$poly);  
-                
+                    ['lat' => $request->s_latitude, 'lng' => $request->s_longitude],$poly);
+
                 $dCheck=\GeometryLibrary\PolyUtil::containsLocation(
                     ['lat' => $request->d_latitude, 'lng' => $request->d_longitude],$poly);
+
                 if($sCheck){
                     $zone1=$zone;
                 }
+
                 if($dCheck){
                     $zone2=$zone;
-                }  
+                }
             }
+
             if($zone1 && $zone2){
                 $fareObj=null;
                 $sameZone=false;
@@ -217,7 +216,7 @@ class AjaxHandlerController extends Controller
                     if($request->user_id){
                         if($User->Business_Person=="Business"){
                             return response()->json([
-                                'estimated_fare' => $fare, 
+                                'estimated_fare' => $fare,
                                 'distance' => $km,
                                 'sameZone' => $sameZone,
                                 'percentage'=>$percentage,
@@ -225,7 +224,7 @@ class AjaxHandlerController extends Controller
                         }
                         else{
                             return response()->json([
-                                'estimated_fare' => $fare*$percentage/100+$fare, 
+                                'estimated_fare' => $fare*$percentage/100+$fare,
                                 'distance' => $km,
                                 'sameZone' => $sameZone,
                                 'percentage'=>$percentage,
@@ -235,7 +234,7 @@ class AjaxHandlerController extends Controller
                     elseif(Auth::user()){
                         if(Auth::user()->Business_Person=="Business"){
                             return response()->json([
-                                'estimated_fare' => $fare, 
+                                'estimated_fare' => $fare,
                                 'distance' => $km,
                                 'sameZone' => $sameZone,
                                 'percentage'=>$percentage,
@@ -243,7 +242,7 @@ class AjaxHandlerController extends Controller
                         }
                         else{
                             return response()->json([
-                                'estimated_fare' => $fare*$percentage/100+$fare, 
+                                'estimated_fare' => $fare*$percentage/100+$fare,
                                 'distance' => $km,
                                 'sameZone' => $sameZone,
                                 'percentage'=>$percentage,
@@ -252,13 +251,13 @@ class AjaxHandlerController extends Controller
                     }
                     else{
                         return response()->json([
-                                'estimated_fare' => $fare, 
+                                'estimated_fare' => $fare,
                                 'distance' => $km,
                                 'sameZone' => $sameZone,
                             ]);
                     }
-                        
-                }   
+
+                }
                 else{
                     dd("Fare not found");
                 }
@@ -269,10 +268,10 @@ class AjaxHandlerController extends Controller
             }
 
         }   catch(Exception $e) {
-        	
+
             return response()->json(['error' => trans('api.something_went_wrong')], 500);
         }
-        
+
         // $this->validate($request,[
         //         's_latitude' => 'required|numeric',
         //         's_longitude' => 'required|numeric',
@@ -300,7 +299,7 @@ class AjaxHandlerController extends Controller
         //     $commission_percentage = Setting::get('commission_percentage');
         //     $service_type = ServiceType::findOrFail($request->service_type);
 		// 	$total_discount = 0;
-            
+
         //     $price = $service_type->fixed;
 
         //     if($service_type->calculator == 'MIN') {
@@ -319,16 +318,16 @@ class AjaxHandlerController extends Controller
 
         //     $tax_price = ( $tax_percentage/100 ) * $price;
         //     $total = $price + $tax_price;
-			
+
 		// 	//sid
 		// 	if ( $request->has('promo_code') ) {
 		// 		// Apply  promo code
 		// 		if($promo_code =  Promocode::where('promo_code', $request->promo_code)->first() ) {
 		// 			$total_discount =  ($total * $promo_code->discount)/100;
-		// 			$total = $total - $total_discount; 
+		// 			$total = $total - $total_discount;
 		// 		}
 		// 	}
-		
+
         //     $ActiveProviders = ProviderService::AvailableServiceProvider($request->service_type)->get()->pluck('provider_id');
 
         //     $distance = Setting::get('provider_search_radius', '10');
@@ -341,16 +340,15 @@ class AjaxHandlerController extends Controller
         //         ->get();
 
         //     $surge = 0;
-            
+
         //     if($Providers->count() <= Setting::get('surge_trigger') && $Providers->count() > 0){
         //         $surge_price = (Setting::get('surge_percentage')/100) * $total;
         //         $total += $surge_price;
         //         $surge = 1;
         //     }
-            
-                
+
         //     return response()->json([
-        //             'estimated_fare' => currency( round($total,2) ), 
+        //             'estimated_fare' => currency( round($total,2) ),
         //             'distance' => $kilometer,
         //             'time' => $time,
         //             'surge' => $surge,
@@ -363,7 +361,7 @@ class AjaxHandlerController extends Controller
         // } catch(Exception $e) {
         //     return response()->json(['error' => trans('api.something_went_wrong')], 500);
         // }
-    }   
+    }
 
 }
 

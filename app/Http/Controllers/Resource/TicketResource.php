@@ -77,14 +77,18 @@ class TicketResource extends Controller
     public function ticket_comment($id){
         try{
             $ticket = Ticket::where('id','=',$id)->where('user_id', Auth::user()->id)->first();
+            
+
             $comments = TicketComment::where('ticket_id', $id)->get();
-// dd($comments);
+//  dd($comments);
             return view('user.ticket.detail_comment', compact('ticket', 'comments'));
 
         } catch (Exception $e){
             return back()->with('flash_error', 'Something went wrong!!!');
         }
     }
+
+
 
     public function saveTicketComment(Request $request, $ticket_id)
     {

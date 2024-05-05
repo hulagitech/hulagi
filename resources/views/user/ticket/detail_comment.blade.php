@@ -169,14 +169,15 @@
                                             <h3>
 
                                                 @if (@$ticket->createdby_cs == 1)
-                                                    Hulagi Delivery <span class="text-danger">(Staff)</span>
+                                                   Hulagi Delivery <span class="text-danger">(Staff)</span>
                                                 @else
-                                                    {{ @$ticket->user->first_name }}
+                                                    {{ @$ticket->user->first_name }} 
                                                     {{ $ticket->user->last_name }} ({{ $ticket->user->email }})
                                                 @endif
 
                                             </h3>
                                             <p class="mb-0 comment__desc text-muted">{{ $ticket->description }}</p>
+
                                             @if (@$ticket->createdby_cs == 1)
 
                                                 <div class="float-right mt-4">
@@ -192,6 +193,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             @foreach ($comments as $comment)
 
                                 <div class="cd-timeline-block m-5">
@@ -207,17 +209,26 @@
 
                                                 </div>
                                             </div>
-                                            <div class="col-lg-9">
+                                            <div class="col-lg-9" style="border: 1px solid red;">
                                                 <h3>
 
                                                     @if (@$comment->createdby_cs == 1)
                                                         Hulagi Delivery <span class="text-danger">(Staff)</span>
+                                                    @elseif($comment->dept_id > 0)
+                                                         {{ $comment->dept->dept }} Department 
                                                     @else
                                                         {{ @$ticket->user->first_name }}
                                                     @endif
 
                                                 </h3>
-                                                <p class="mb-0 comment__desc text-muted">{{ $comment->comment }}</p>
+                                                <p class="mb-0 comment__desc text-muted">
+
+                                                @if($comment->dept_id > 0)
+                                                   <b> {{ $comment->dept->dept }} replied: </b>
+                                                @endif    
+
+                                                    {{ $comment->comment }} 
+                                                </p>
                                                 @if (@$comment->createdby_cs == 1)
 
                                                     <div class="float-right mt-4">
@@ -234,6 +245,9 @@
                                     </div>
                                 </div>
                             @endforeach
+
+
+
                             <form class='d-flex' method="POST" action="{{ url('comment/ticket/' . $ticket->id) }}">
                                 {{ csrf_field() }}
                                 <input type="text" name="user_comment" id="user_comment" class="form-control mr-2"

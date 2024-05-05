@@ -110,7 +110,7 @@
                         </tr>
                     </tfoot>
                 </table>
-                {{ $users->links('vendor.pagination.bootstrap-4') }}
+
                 @else
                 <h6 class="no-result">No results found</h6>
                 @endif

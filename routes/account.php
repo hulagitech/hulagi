@@ -14,8 +14,6 @@ Route::get('/rider/completed', 'AccountController@riderCompletedOrder')->name('r
 Route::get('/vendor/completed', 'AccountController@vendorCompletedOrder')->name('vendor.completed');
 
 
-
-
 Route::resource('provider', 'Resource\ProviderResource');
 Route::get('requests/{id}', 'Resource\TripResource@Accountshow')->name('requests.show');
 Route::put('requests/{id}', 'Resource\TripResource@update');

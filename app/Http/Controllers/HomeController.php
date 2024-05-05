@@ -142,6 +142,8 @@ class HomeController extends Controller
             return view('user.ride.waiting')->with('request', $Response->data[0]);
         }
     }
+
+    
     public function searchOrder(Request $request){
         try{
             if(isset($request->search)){
@@ -541,6 +543,7 @@ class HomeController extends Controller
      */
     public function promotions_index(Request $request)
     {
+        
         $promocodes = $this->UserAPI->promocodes();
 
         //dd( $promocodes );

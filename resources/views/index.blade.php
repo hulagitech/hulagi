@@ -1,6 +1,4 @@
 <?php
-
-   
    $locale = session()->get('locale');
    if($locale){
 

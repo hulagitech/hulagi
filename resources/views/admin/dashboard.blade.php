@@ -18,7 +18,7 @@
         }
 
     </style>
-    <div class="row">
+    <div class="row p-4">
         <div class="col-sm-12">
             <div class="page-title-box">
                 <div class="row align-items-center">
@@ -33,7 +33,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row p-4">
         <div class="col-xl-12">
             <div class="card">
                 <div class="card-body">
@@ -66,12 +66,13 @@
                 
         </div>
         
-        <div class="col-lg-4 col-md-6 col-xs-12">
+        <!-- <div class="col-lg-4 col-md-6 col-xs-12">
             <div class="card bg-primary mini-stat text-white">
                 <div class="p-3 mini-stat-desc">
                     <div class="clearfix">
                         <h6 class="text-uppercase mt-0 float-left text-white-50">All Orders Today</h6>
-                        <h4 class="mb-3 mt-0 float-right">{{ $rides }}</h4>
+                        <h4 class="mb-3 mt-0 float-right">{{ $rides }}  UP
+                        </h4>
                     </div>
                 </div>
             </div>
@@ -208,7 +209,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row p-4">
         <div class="col-sm-12">
             <div class="page-title-box">
                 <div class="row align-items-center">
@@ -222,8 +223,10 @@
 
             </div>
         </div>
-    </div>
-    <div class="row">
+    </div> -->
+
+
+    <div class="row p-4">
 
         <div class="col-lg-4 col-md-6 col-xs-12">
             <div class="card bg-primary mini-stat text-white">

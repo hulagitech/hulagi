@@ -138,6 +138,7 @@ class AdminController extends Controller
 
             //Total Order
             $total_rides = UserRequests::with('user','provider','payment')->orderBy('id','desc')->count();
+
             $total_cancel_rides = UserRequests::where('status','CANCELLED')->count();
             $total_pending_rides = UserRequests::where('status','PENDING')->count();
             $total_completed_rides = UserRequests::where('status','COMPLETED')->count();

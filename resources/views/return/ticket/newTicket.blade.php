@@ -11,7 +11,7 @@
                     <h4 class="page-title m-0"><i class="fa fa-plus fa-ticket"></i> CREATE NEW TICKET</h4>
                 </div>
                 <div class="col-md-4 d-flex justify-content-end">
-                    <form class="form-inline pull-right" method="GET" action={{url('return/searchUser')}}>
+                    <form class="form-inline pull-right" method="GET" action="{{url('return/searchUser')}}">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <input type="text" class="form-control" name="searchField" id="searchField"

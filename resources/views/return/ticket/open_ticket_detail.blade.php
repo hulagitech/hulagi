@@ -207,15 +207,15 @@
                                     <div class="col-lg-9">
                                         <h3>
 
-                                            @if (@$comment->createdby_cs == 0)
-                                                Hulagi Logistics Pvt. ltd <span class="text-danger">(Staff)</span>
+                                            @if (@$comment->dept_id >  0)
+                                                Hulagi Logistics Pvt. ltd <span class="text-danger">(Staff) {{ $comment->dept->dept }} Department</span>
                                             @else
                                                 {{ @$ticket->user->first_name }}
                                             @endif
 
                                         </h3>
                                         <p class="mb-0 comment__desc text-muted">{{ $comment->comment }}</p>
-                                        @if (@$comment->createdby_cs == 0)
+                                        @if (@$comment->dept_id >  0)
 
                                             <div class="float-right mt-4">
                                                 Kind regards,<br>

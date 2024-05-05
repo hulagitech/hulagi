@@ -362,7 +362,7 @@
                             </tbody>
                         </table>
                         <div style="display: flex;justify-content: center;"> 
-                {{$trips->links('vendor.pagination.bootstrap-4') }}
+        
             </div>
 
                     @else

@@ -803,6 +803,7 @@ window.onclick = function(event) {
                 $(this).find('input[type=radio]').attr('checked', 'checked');
             }
         });
+
         $('#origin-input, #destination-input').change(function() {
             var ola = $('#origin_latitude').val();
             var oli = $('#origin_longitude').val();

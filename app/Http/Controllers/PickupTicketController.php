@@ -85,6 +85,7 @@ class PickupTicketController extends Controller
         try{
             $ticket = Ticket::where('id','=',$id)->first();
             $comments = TicketComment::where('ticket_id', $id)->get();
+          //  dd($ticket);
             $depts = Department::orderBy('dept')->get();
             $from_Dep = Department::where('id',$ticket->department)->first();
 

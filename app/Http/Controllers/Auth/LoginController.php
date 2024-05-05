@@ -42,6 +42,8 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $request->request->add(['user_type' => env('APP_NAME', 'Hulagi')]);
+
+
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],

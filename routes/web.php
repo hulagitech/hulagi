@@ -140,7 +140,6 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::get ('/offnotificationtoprovider' , 'SendPushNotification@offnotificationtoprovider');
 
-    
 
     Route::get ('/provider-document-expiry-notification' , 'CommonController@providerDocumentExpiryNotification');
 
@@ -178,13 +177,13 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 
-Route::group(['prefix' => 'dispatcher'], function () { 
+Route::group(['prefix' => 'dispatcher'], function () {
 
   Route::get('/',function(){
 
    return redirect()->route('dispatcher.login');
 
-  });  
+  });
 
   Route::get('/login', 'DispatcherAuth\LoginController@showLoginForm')->name('dispatcher.login');
 

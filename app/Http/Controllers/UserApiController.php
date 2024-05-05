@@ -597,23 +597,23 @@ class UserApiController extends Controller
                 $details = json_decode($json, TRUE);
 				$route_key[] = isset($details['routes'][0]['overview_polyline']['points'])?$details['routes'][0]['overview_polyline']['points']:null;
 			}
-			
+
 			//location 2
 			// if(  $request->s_latitude_2 &&  $request->s_longitude_2 &&  $request->d_latitude_2 && $request->d_longitude_2 ) {
 			// 	$details = "https://maps.googleapis.com/maps/api/directions/json?origin=".$request->s_latitude_2.",".$request->s_longitude_2."&destination=".$request->d_latitude_2.",".$request->d_longitude_2."&mode=driving&key=".env('GOOGLE_MAP_KEY');
 			// 	$json = curl($details);
 			// 	$details = json_decode($json, TRUE);
 			// 	$route_key[] = $details['routes'][0]['overview_polyline']['points'];
-				
+
 			// }
-			
+
 			//location 3
 			// if(  $request->s_latitude_3 &&  $request->s_longitude_3 &&  $request->d_latitude_3 && $request->d_longitude_3 ) {
 			// 	$details = "https://maps.googleapis.com/maps/api/directions/json?origin=".$request->s_latitude_3.",".$request->s_longitude_3."&destination=".$request->d_latitude_3.",".$request->d_longitude_3."&mode=driving&key=".env('GOOGLE_MAP_KEY');
 			// 	$json = curl($details);
 			// 	$details = json_decode($json, TRUE);
 			// 	$route_key[] = $details['routes'][0]['overview_polyline']['points'];
-			// } 
+			// }
 	//	dd('hi');
             $date = Carbon::today()->toDateString();
             if($request->promo_code != null){
